@@ -1,6 +1,12 @@
 import React from "react";
+import { addToCart } from "../../functions";
+
 import "./productcard.scss";
 const ProductCard = (product) => {
+  const addToCart_ClickHandle = (productId) => {
+    addToCart(4);
+  };
+
   return (
     <div className="product-card">
       <div>
@@ -10,7 +16,12 @@ const ProductCard = (product) => {
         <p className="product-card-title">{product.name}</p>
         <div>
           <p className="product-card-price">£{product.price}</p>
-          <p className="product-card-Addbtn">Add To Card</p>
+          <p
+            className="product-card-Addbtn"
+            onClick={() => addToCart_ClickHandle(product.id)}
+          >
+            Add To Card
+          </p>
         </div>
       </div>
     </div>
