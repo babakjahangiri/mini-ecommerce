@@ -19,9 +19,11 @@ $product-grid-width: 320px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-
+    margin-bottom: 50px;
     p {
-      align-self: center;
+      margin: 0;
+      align-self: baseline;
+      padding-top: 20px;
     }
   }
 }

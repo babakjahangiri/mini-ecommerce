@@ -1,4 +1,5 @@
 import React from "react";
+
 import "./minicart-item.scss";
 
 const MiniCartItem = () => {
