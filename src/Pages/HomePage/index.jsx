@@ -1,7 +1,11 @@
 import React from "react";
-
+import { HeroImage, ProductList } from "./../../components";
 const HomePage = () => {
-  return <div>this a home page</div>;
+  return (
+    <React.Fragment>
+      <HeroImage />
+      <ProductList />
+    </React.Fragment>
+  );
 };
-
 export default HomePage;

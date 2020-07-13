@@ -1,0 +1,44 @@
+@import "../../_variables";
+
+$product-grid-width: 320px;
+
+.product-card {
+  div img {
+    width: $product-grid-width;
+    height: auto;
+    border: 1px $product-border-color solid;
+  }
+  width: $product-grid-width;
+}
+
+.product-card-down {
+  //  padding: 0 10px 0 10px;
+  font-family: $default-font;
+
+  div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    p {
+      align-self: center;
+    }
+  }
+}
+.product-card-title {
+  font-size: 1.25em;
+  font-weight: 300;
+  margin: 10px 0 5px 0;
+}
+.product-card-price {
+  font-size: 1.85em;
+  font-weight: 400;
+  margin: 10px 0 5px 0;
+}
+
+.product-card-Addbtn {
+  font-size: 1.25em;
+  font-weight: 200;
+  border-bottom: 1px solid black;
+  cursor: pointer;
+}

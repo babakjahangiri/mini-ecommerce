@@ -1,0 +1,77 @@
+@import "../../_variables";
+
+.hero-container {
+  width: $container-xl;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  border: 1px solid #eeeeee;
+}
+
+//watch
+.hero-left {
+  display: flex;
+  align-self: flex-start;
+  width: 25%;
+
+  img {
+    width: 100%;
+    height: auto;
+    align-self: flex-start;
+  }
+}
+
+// hand with watch (new men watch)
+.hero-right {
+  background-color: $hero-image-color;
+  width: 75%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-self: flex-start;
+
+  :nth-child(1) {
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+      margin-right: 0;
+      margin-left: auto;
+    }
+  }
+}
+
+.hero-down {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+
+  align-items: stretch;
+  justify-content: stretch;
+  min-height: 95px;
+
+  :nth-child(1) {
+    background-color: $header-color1;
+    flex: 2;
+
+    text-align: center;
+    color: $background-color;
+
+    p {
+      display: block;
+      font-family: $default-font;
+      font-size: 1.75em;
+    }
+  }
+  :nth-child(2) {
+    background-color: $header-color2;
+    flex: 1;
+  }
+  :nth-child(3) {
+    background-color: $header-color3;
+    flex: 1;
+  }
+}

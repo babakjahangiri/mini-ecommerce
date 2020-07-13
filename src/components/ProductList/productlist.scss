@@ -1,0 +1,32 @@
+@import "../../_variables";
+
+main {
+  width: $container-xl;
+  max-width: $container-xl;
+  margin-bottom: 30px;
+}
+
+.product-list-filter {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+
+  p {
+    display: block;
+    margin: 50px 30px 30px 0px;
+    padding: 10px 0 10px;
+    font-family: $default-font;
+    font-size: 1.15em;
+    font-weight: 300;
+    cursor: pointer;
+  }
+}
+
+.product-list-main {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  justify-content: space-between;
+  grid-row-gap: 30px;
+  margin-left: auto;
+  margin-right: auto;
+}
