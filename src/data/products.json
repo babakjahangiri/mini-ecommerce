@@ -1,14 +1,35 @@
 [
   {
-    "id": 1,
-    "sku": "KOM-W2283",
-    "name": "Winston Nato Neon Orange",
-    "price": 89.0,
+    "id": 9,
+    "sku": "GU58048988",
+    "name": "GUCCI Stainless Steel",
+    "price": 99.0,
     "inStock": true,
     "isNew": true,
     "forGender": "m",
-    "image": "KOM-W2283.jpg"
+    "image": "GU58048988.jpg"
   },
+  {
+    "id": 6,
+    "sku": "KOM-W4071",
+    "name": "Lewis Cognac",
+    "price": 89.0,
+    "inStock": true,
+    "isNew": false,
+    "forGender": "m",
+    "image": "KOM-W4071.jpg"
+  },
+  {
+    "id": 13,
+    "sku": "GU5022351",
+    "name": "GUCCI Women",
+    "price": 699.0,
+    "inStock": true,
+    "isNew": true,
+    "forGender": "f",
+    "image": "GU5022351.jpg"
+  },
+
   {
     "id": 2,
     "sku": "KOM-W2272",
@@ -30,6 +51,16 @@
     "image": "KOM-W3052.jpg"
   },
   {
+    "id": 14,
+    "sku": "KOM-W1235",
+    "name": "Moneypenny Black Silver",
+    "price": 49.0,
+    "inStock": true,
+    "isNew": false,
+    "forGender": "f",
+    "image": "KOM-W1235.jpg"
+  },
+  {
     "id": 4,
     "sku": "KOM-W3053",
     "name": "Winston Double Subs Green",
@@ -39,26 +70,7 @@
     "forGender": "m",
     "image": "KOM-W3053.jpg"
   },
-  {
-    "id": 5,
-    "sku": "KOM-W4062",
-    "name": "Lewis Cognac",
-    "price": 99.0,
-    "inStock": true,
-    "isNew": false,
-    "forGender": "m",
-    "image": "KOM-W4062.jpg"
-  },
-  {
-    "id": 6,
-    "sku": "KOM-W4071",
-    "name": "Lewis Cognac",
-    "price": 89.0,
-    "inStock": true,
-    "isNew": false,
-    "forGender": "m",
-    "image": "KOM-W4071.jpg"
-  },
+
   {
     "id": 7,
     "sku": "OMD6053001",
@@ -79,15 +91,16 @@
     "forGender": "m",
     "image": "KOM-W4128.jpg"
   },
+
   {
-    "id": 9,
-    "sku": "GU58048988",
-    "name": "GUCCI Stainless Steel",
-    "price": 99.0,
-    "inStock": true,
-    "isNew": true,
-    "forGender": "m",
-    "image": "GU58048988.jpg"
+    "id": 15,
+    "sku": "KOM-W4310",
+    "name": "Mono Tag White",
+    "price": 58.0,
+    "inStock": false,
+    "isNew": false,
+    "forGender": "f",
+    "image": "KOM-W4310.jpg"
   },
   {
     "id": 10,
@@ -98,6 +111,16 @@
     "isNew": false,
     "forGender": "m",
     "image": "KNZ580497.jpg"
+  },
+  {
+    "id": 5,
+    "sku": "KOM-W4062",
+    "name": "Lewis Cognac",
+    "price": 99.0,
+    "inStock": true,
+    "isNew": false,
+    "forGender": "m",
+    "image": "KOM-W4062.jpg"
   },
   {
     "id": 11,
@@ -120,35 +143,16 @@
     "image": "KOM-W4311.jpg"
   },
   {
-    "id": 13,
-    "sku": "GU5022351",
-    "name": "GUCCI Women",
-    "price": 699.0,
+    "id": 1,
+    "sku": "KOM-W2283",
+    "name": "Winston Nato Neon Orange",
+    "price": 89.0,
     "inStock": true,
     "isNew": true,
-    "forGender": "f",
-    "image": "GU5022351.jpg"
+    "forGender": "m",
+    "image": "KOM-W2283.jpg"
   },
-  {
-    "id": 14,
-    "sku": "KOM-W1235",
-    "name": "Moneypenny Black Silver",
-    "price": 49.0,
-    "inStock": true,
-    "isNew": false,
-    "forGender": "f",
-    "image": "KOM-W1235.jpg"
-  },
-  {
-    "id": 15,
-    "sku": "KOM-W4310",
-    "name": "Mono Tag White",
-    "price": 58.0,
-    "inStock": false,
-    "isNew": false,
-    "forGender": "f",
-    "image": "KOM-W4310.jpg"
-  },
+
   {
     "id": 16,
     "sku": "KOM-W4109",

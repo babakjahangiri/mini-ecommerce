@@ -1,40 +1,80 @@
-const ProductsInCart = [];
+import allProducts from "./../data/products.json";
 
-const initCart = () => {
+export const initCart = () => {
   if (window.sessionStorage.getItem("Cart") === null) {
     let cartObject = {
-      name: "babak'card", //customer name
+      name: "", //customer name
       products: [],
       total: 0,
     };
-
-    window.sessionStorage.setItem("Cart", JSON.stringify(cartObject));
+    setCart(cartObject);
   }
 };
 
-export const userCart = (CartData) => {};
+//it could work with localStorage as well
+// ---------------------------------------------//
+//return the cart as an object
+export const getCart = () => {
+  let cartObject = JSON.parse(window.sessionStorage.getItem("Cart"));
+  if (cartObject === null) {
+    initCart();
+  }
+  return JSON.parse(window.sessionStorage.getItem("Cart"));
+};
 
-export const addToCart = (ProductId) => {
-  initCart();
+//set object to the cart
+const setCart = (cartObject) => {
+  window.sessionStorage.setItem("Cart", JSON.stringify(cartObject));
+};
 
-  var cartObject = JSON.parse(window.sessionStorage.getItem("Cart"));
+// ---------------------------------------------------//
+export const getItemsCount = () => {
+  let cartObject = getCart();
+  var totalItems = 0;
+  if (cartObject.products !== null) {
+    for (var i in cartObject.products) {
+      totalItems += cartObject.products[i].qty;
+    }
+  }
+  return totalItems;
+};
 
-  console.log(cartObject);
+const initProduct = (productId) => {
+  let productItem = {
+    id: productId,
+    qty: 1,
+  };
+  let cartObject = getCart();
+  cartObject.products.push(productItem);
+  setCart(cartObject);
+};
 
-  //   let productItem = new Object();
-  //   productItem.id = ProductId;
-  //   productItem.qty = 1;
-  //   ProductsInCart.push(productItem);
+export const addToCart = (productId) => {
+  let cartObject = getCart();
 
-  //   window.localStorage.setItem("Cart", ProductsInCart);
+  //Check the Product array in the object is empty or not
+  //if (cartObject.products.length > 0) {
+  let productItem = cartObject.products.find((item) => item.id === productId);
+
+  //check if product id not found then add a product with qty:1 (initProduct)
+  if (productItem !== undefined) {
+    let newProducts = cartObject.products.map((item) =>
+      item.id === productId ? { ...item, qty: item.qty + 1 } : item
+    );
+    cartObject.products = newProducts;
+    setCart(cartObject);
+  } else {
+    initProduct(productId);
+  }
+  // }
+};
+
+export const getProductFromStock = (productId) => {
+  return allProducts.find((item) => item.id === productId);
 };
 
 export const UpdateCart = (CartData) => {
-  let oldCart = JSON.parse(sessionStorage.getItem("Cart"));
-};
-
-export const getUserCart = () => {
-  window.sessionStorage.getItem("Cart");
+  //let oldCart = JSON.parse(sessionStorage.getItem("Cart"));
 };
 
 export const removeUserCart = () => {
@@ -50,12 +90,3 @@ export function CheckBrowser() {
     //message to user that we can not store the data
   }
 }
-
-const makeCart = () => {
-  let cartObject = new Object();
-  cartObject.name = ""; //customer name
-  cartObject.products = [];
-  cartObject.total = 0;
-};
-
-const AddToCartObject = () => {};

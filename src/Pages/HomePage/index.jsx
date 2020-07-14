@@ -1,5 +1,6 @@
 import React from "react";
 import { HeroImage, ProductList } from "./../../components";
+
 const HomePage = () => {
   return (
     <React.Fragment>

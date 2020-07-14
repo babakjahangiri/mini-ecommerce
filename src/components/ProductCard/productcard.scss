@@ -3,7 +3,7 @@
 $product-grid-width: 320px;
 
 .product-card {
-  div img {
+  div a img {
     width: $product-grid-width;
     height: auto;
     border: 1px $product-border-color solid;
@@ -31,6 +31,14 @@ $product-grid-width: 320px;
   font-size: 1.25em;
   font-weight: 300;
   margin: 10px 0 5px 0;
+
+  a {
+    text-decoration: none;
+    color: $normal-text-color;
+    &:hover {
+      color: $header-color3;
+    }
+  }
 }
 .product-card-price {
   font-size: 1.85em;

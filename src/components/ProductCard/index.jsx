@@ -1,19 +1,28 @@
-import React from "react";
-import { addToCart } from "../../functions";
-
+import React, { useContext } from "react";
+import { addToCart, getItemsCount } from "../../functions";
+import { cartItemsCountContext } from "./../../context";
+import { Link } from "react-router-dom";
 import "./productcard.scss";
+
 const ProductCard = (product) => {
+  const { setItemsCount } = useContext(cartItemsCountContext);
+
   const addToCart_ClickHandle = (productId) => {
-    addToCart(4);
+    addToCart(productId);
+    setItemsCount(getItemsCount());
   };
 
   return (
     <div className="product-card">
       <div>
-        <img src={"images/" + product.image} alt={product.name} />
+        <Link to={"product/" + product.id}>
+          <img src={"images/" + product.image} alt={product.name} />
+        </Link>
       </div>
       <div className="product-card-down">
-        <p className="product-card-title">{product.name}</p>
+        <p className="product-card-title">
+          <Link to={`product/${product.id}`}>{product.name}</Link>
+        </p>
         <div>
           <p className="product-card-price">£{product.price}</p>
           <p
