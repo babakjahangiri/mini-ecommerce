@@ -1,20 +1,33 @@
-import React, { useState, useEffect } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import "./productdetails.scss";
 import { NavLink } from "react-router-dom";
+import { addToCart, getItemsCount } from "../../functions";
+import { cartItemsCountContext } from "./../../context";
 import allProducts from "./../../data/products.json";
 
 const ProductDetails = ({ match }) => {
   const [productItem, setProductItem] = useState(null);
-  const productId = match.params.pid;
+  const [itemAdded, setItemAdded] = useState(false);
 
+  const productId = match.params.pid;
+  const { setItemsCount } = useContext(cartItemsCountContext);
   useEffect(() => {
     setProductItem(allProducts.filter((p) => p.id === Number(productId)));
   }, [productId]);
 
+  const addToCart_ClickHandle = (productId) => {
+    addToCart(productId);
+    setItemsCount(getItemsCount());
+    setItemAdded(true);
+    setTimeout(() => {
+      setItemAdded(false);
+    }, 600);
+  };
+
   console.log(JSON.stringify(!productItem));
 
-  if (!productItem || productItem === null) {
-    return <h1>product not found</h1>;
+  if (!productItem || productItem[0] === undefined) {
+    return <h1>Product not found</h1>;
   } else {
     return (
       <section className="product-details-section">
@@ -40,7 +53,17 @@ const ProductDetails = ({ match }) => {
               <p>Item in stock</p>
             </div>
             <div className="product-details-bottom">
-              <button className="btn-AddtoCart">Add To Cart</button>
+              <span
+                className={`${itemAdded === true ? "hide-element" : "hidden"}`}
+              >
+                Item added to your cart
+              </span>
+              <button
+                className="btn-AddtoCart"
+                onClick={() => addToCart_ClickHandle(productItem[0].id)}
+              >
+                Add To Cart
+              </button>
               <p>FREE SHIPPING AND RETURNS</p>
             </div>
           </div>

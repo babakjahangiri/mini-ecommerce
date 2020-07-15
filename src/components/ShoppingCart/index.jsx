@@ -1,10 +1,59 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { NavLink } from "react-router-dom";
+import { CartRow } from "./../../components";
+import { getCartProducts } from "./../../functions";
+
+import "./shoppingcart.scss";
 
 const ShoppingCart = () => {
+  const [cartProducts, setCartProducts] = useState(getCartProducts);
+
+  // useEffect(() => {
+  //   getCartProducts().then((products) => {
+  //     setCartProducts(products);
+  //   });
+  // }, []);
+
+  console.log(cartProducts);
+
   return (
-    <div>
-      <h1>ShoppingCart</h1>
-    </div>
+    <section className="shoppingcart-container">
+      <div className="breadcrumbs">
+        <p>
+          <NavLink to="/" exact>
+            HOME &nbsp;&gt;&nbsp;
+          </NavLink>
+        </p>
+        <p> Products &nbsp;&gt;&nbsp; </p>
+        <p> Shopping Cart</p>
+      </div>
+      <div className="shoppingcart">
+        <div className="shoppingcart-header">
+          <ul>
+            <li>Products</li>
+            <li>Quantity</li>
+            <li>Price</li>
+            <li></li>
+          </ul>
+        </div>
+
+        <div className="shoppingcart-body">
+          {cartProducts.map((product, index) => (
+            <CartRow {...product} key={index} />
+          ))}
+        </div>
+        <div className="shoppingcart-footer">
+          <div>
+            <button>Continue Shopping</button>
+          </div>
+          <div>
+            <button>Checkout</button>
+            <p>FREE SHIPPING AND RETURNS</p>
+          </div>
+        </div>
+      </div>
+      {/* <p onClick={() => deleteItemHandler(6)}>Delete a Product</p> */}
+    </section>
   );
 };
 

@@ -56,6 +56,12 @@
     font-size: 0.85em;
     font-weight: 300;
   }
+  span {
+    display: block;
+    color: $header-color3;
+    font-size: 1em;
+    margin: 5px;
+  }
 }
 
 .product-details-info {
@@ -107,5 +113,35 @@
     outline-style: auto;
     outline-width: 1px;
     border-radius: 0px;
+  }
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.hide-element {
+  -moz-animation: hideAnimate 1s ease-out 1s forwards;
+  /* Firefox */
+  -webkit-animation: hideAnimate 1s ease-out 1s forwards;
+  /* Safari and Chrome */
+  -o-animation: hideAnimate 1s ease-out 1s forwards;
+  /* Opera */
+  animation: hideAnimate 1s ease-out 1s forwards;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+@keyframes hideAnimate {
+  to {
+    width: 0;
+    height: 0;
+    overflow: hidden;
+  }
+}
+@-webkit-keyframes hideAnimate {
+  to {
+    width: 0;
+    height: 0;
+    visibility: hidden;
   }
 }

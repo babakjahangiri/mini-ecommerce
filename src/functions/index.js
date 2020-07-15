@@ -4,8 +4,8 @@ export const initCart = () => {
   if (window.sessionStorage.getItem("Cart") === null) {
     let cartObject = {
       name: "", //customer name
-      products: [],
       total: 0,
+      products: [],
     };
     setCart(cartObject);
   }
@@ -68,13 +68,36 @@ export const addToCart = (productId) => {
   }
   // }
 };
-
-export const getProductFromStock = (productId) => {
-  return allProducts.find((item) => item.id === productId);
+export const getCartProducts = () => {
+  let cartObject = getCart();
+  return cartObject.products;
 };
 
+export const deleteCartItem = (productId) => {
+  let cartObject = getCart();
+
+  let newProducts = [];
+  cartObject.products.map((item) => {
+    if (item.id !== productId) {
+      newProducts.push(item);
+    }
+  });
+  delete cartObject.products;
+  cartObject.products = newProducts;
+
+  console.log(JSON.stringify(cartObject));
+};
+
+const updateCartProducts = (product) => {
+  let cartObject = getCart();
+};
 export const UpdateCart = (CartData) => {
   //let oldCart = JSON.parse(sessionStorage.getItem("Cart"));
+};
+
+///- --------------
+export const getProductFromStock1 = (productId) => {
+  return allProducts.find((item) => item.id === productId);
 };
 
 export const removeUserCart = () => {

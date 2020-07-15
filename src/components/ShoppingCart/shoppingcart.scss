@@ -1,0 +1,43 @@
+@import "../../_variables";
+
+.shoppingcart-container {
+  display: flex;
+  flex-direction: column;
+  width: $container-xl;
+}
+
+.shoppingcart {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  justify-items: center;
+  margin: 0 auto;
+}
+
+.shoppingcart-header {
+  background-color: $primary-buttons-color;
+  color: $footer-font;
+  font-family: $default-font;
+  width: 100%;
+  height: auto;
+
+  ul {
+    display: flex;
+    list-style: none;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 1.25em;
+    font-weight: 300;
+    li {
+      margin: auto;
+      align-self: center;
+    }
+  }
+}
+
+.shoppingcart-body {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color: $product-background;
+}
