@@ -55,9 +55,9 @@
 
 @media (min-width: 576px) {
   .product-card {
-    width: 200px;
+    width: 250px;
     div a img {
-      width: 220px;
+      width: 250px;
     }
     width: 100%;
   }
@@ -76,6 +76,15 @@
       padding-left: 10px;
       padding-right: 10px;
     }
+  }
+}
+@media (min-width: 768px) {
+  .product-card {
+    width: 300px;
+    div a img {
+      width: 300px;
+    }
+    width: 100%;
   }
 }
 
