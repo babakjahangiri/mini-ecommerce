@@ -11,7 +11,7 @@ export const initCart = () => {
   }
 };
 
-//it could work with localStorage as well
+//it could work with localStorage as well if change sessionStorage to localStorage
 // ---------------------------------------------//
 //return the cart as an object
 export const getCart = () => {
@@ -33,7 +33,7 @@ export const getItemsCount = () => {
   var totalItems = 0;
   if (cartObject.products !== null) {
     for (var i in cartObject.products) {
-      totalItems += cartObject.products[i].qty;
+      totalItems += Number(cartObject.products[i].qty);
     }
   }
   return totalItems;
@@ -59,7 +59,7 @@ export const addToCart = (productId) => {
   //check if product id not found then add a product with qty:1 (initProduct)
   if (productItem !== undefined) {
     let newProducts = cartObject.products.map((item) =>
-      item.id === productId ? { ...item, qty: item.qty + 1 } : item
+      item.id === productId ? { ...item, qty: Number(item.qty) + 1 } : item
     );
     cartObject.products = newProducts;
     setCart(cartObject);
@@ -75,28 +75,44 @@ export const getCartProducts = () => {
 
 export const deleteCartItem = (productId) => {
   let cartObject = getCart();
-
   let newProducts = [];
-  cartObject.products.map((item) => {
-    if (item.id !== productId) {
-      newProducts.push(item);
+
+  for (var i = 0; i < cartObject.products.length; i++) {
+    if (cartObject.products[i].id !== productId) {
+      newProducts.push(cartObject.products[i]);
     }
-  });
+  }
+
   delete cartObject.products;
   cartObject.products = newProducts;
+  setCart(cartObject);
 
-  console.log(JSON.stringify(cartObject));
+  return cartObject.products; //return manipulated cart object after delete
 };
 
-const updateCartProducts = (product) => {
+export const updateCartItem = (productId, qty) => {
   let cartObject = getCart();
+  let newProducts = [];
+
+  for (var i = 0; i < cartObject.products.length; i++) {
+    if (cartObject.products[i].id === productId) {
+      cartObject.products[i].qty = qty;
+    }
+    newProducts.push(cartObject.products[i]);
+  }
+
+  delete cartObject.products;
+  cartObject.products = newProducts;
+  setCart(cartObject);
+
+  return cartObject.products; //return edited products in the cart
 };
 export const UpdateCart = (CartData) => {
   //let oldCart = JSON.parse(sessionStorage.getItem("Cart"));
 };
 
 ///- --------------
-export const getProductFromStock1 = (productId) => {
+export const getProductStock = (productId) => {
   return allProducts.find((item) => item.id === productId);
 };
 

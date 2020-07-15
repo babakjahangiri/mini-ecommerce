@@ -10,7 +10,7 @@ const ProductDetails = ({ match }) => {
   const [itemAdded, setItemAdded] = useState(false);
 
   const productId = match.params.pid;
-  const { setItemsCount } = useContext(cartItemsCountContext);
+  const { itemsCount, setItemsCount } = useContext(cartItemsCountContext);
   useEffect(() => {
     setProductItem(allProducts.filter((p) => p.id === Number(productId)));
   }, [productId]);
@@ -18,13 +18,15 @@ const ProductDetails = ({ match }) => {
   const addToCart_ClickHandle = (productId) => {
     addToCart(productId);
     setItemsCount(getItemsCount());
+
+    //Manage the add to cart message
     setItemAdded(true);
     setTimeout(() => {
       setItemAdded(false);
     }, 600);
   };
 
-  console.log(JSON.stringify(!productItem));
+  // console.log(JSON.stringify(!productItem));
 
   if (!productItem || productItem[0] === undefined) {
     return <h1>Product not found</h1>;

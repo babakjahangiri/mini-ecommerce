@@ -1,20 +1,25 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useContext } from "react";
 import { NavLink } from "react-router-dom";
+import { cartItemsCountContext } from "./../../context";
 import { CartRow } from "./../../components";
-import { getCartProducts } from "./../../functions";
+import {
+  getCartProducts,
+  deleteCartItem,
+  getItemsCount,
+} from "./../../functions";
 
 import "./shoppingcart.scss";
 
 const ShoppingCart = () => {
-  const [cartProducts, setCartProducts] = useState(getCartProducts);
+  const [cartProducts, setCartProducts] = useState(getCartProducts());
 
-  // useEffect(() => {
-  //   getCartProducts().then((products) => {
-  //     setCartProducts(products);
-  //   });
-  // }, []);
+  //for mini basket items count
+  const { itemsCount, setItemsCount } = useContext(cartItemsCountContext);
 
-  console.log(cartProducts);
+  function removeItemHanlder(pid) {
+    setCartProducts(deleteCartItem(pid));
+    setItemsCount(getItemsCount());
+  }
 
   return (
     <section className="shoppingcart-container">
@@ -39,7 +44,11 @@ const ShoppingCart = () => {
 
         <div className="shoppingcart-body">
           {cartProducts.map((product, index) => (
-            <CartRow {...product} key={index} />
+            <CartRow
+              cartProduct={product}
+              key={product.id}
+              removeItemHanlder={removeItemHanlder}
+            />
           ))}
         </div>
         <div className="shoppingcart-footer">

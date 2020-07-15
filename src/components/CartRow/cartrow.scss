@@ -16,9 +16,11 @@
 
 .shoppingcart-product-image {
   width: 10%;
+
   img {
     height: 100px;
     width: auto;
+    cursor: pointer;
   }
 }
 
@@ -27,15 +29,17 @@
 
   h2 {
     text-align: left;
-    font-size: 1.5em;
+    font-size: 1.15em;
     font-weight: 200;
     margin-bottom: 10px;
+    cursor: pointer;
   }
   h5 {
     text-align: left;
     font-size: 1em;
     font-weight: 200;
     margin-top: 0px;
+    cursor: pointer;
   }
 }
 
@@ -46,7 +50,7 @@
     width: 100%;
     padding: 10px 20px;
     margin: 8px 0;
-    font-size: 2em;
+    font-size: 1.8em;
     font-weight: 200;
     font-family: $default-font;
     box-sizing: border-box;
@@ -73,5 +77,6 @@
   img {
     height: 40px;
     width: auto;
+    cursor: pointer;
   }
 }
