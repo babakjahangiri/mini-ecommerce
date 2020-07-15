@@ -15,7 +15,7 @@
 }
 
 .shoppingcart-product-image {
-  width: 12%;
+  width: $sc-col-image-width;
 
   a {
     text-decoration: none;
@@ -29,7 +29,7 @@
 }
 
 .shoppingcart-product-name {
-  width: 27%;
+  width: $sc-col-name-width;
   a {
     text-decoration: none;
     color: $normal-text-color;
@@ -51,7 +51,7 @@
 }
 
 .shoppingcart-product-qty {
-  width: 15%;
+  width: $sc-col-qty-width;
 
   input[type="number"] {
     width: 100%;
@@ -70,7 +70,7 @@
 }
 
 .shoppingcart-product-price {
-  width: 20%;
+  width: $sc-col-price-width;
   display: block;
   margin: auto;
   h3 {
@@ -80,7 +80,7 @@
 }
 
 .shoppingcart-product-remove {
-  width: 15%;
+  width: $sc-col-remove-width;
   img {
     height: 40px;
     width: auto;

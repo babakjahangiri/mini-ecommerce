@@ -107,15 +107,34 @@ export const updateCartItem = (productId, qty) => {
 
   return cartObject.products; //return edited products in the cart
 };
-export const UpdateCart = (CartData) => {
-  //let oldCart = JSON.parse(sessionStorage.getItem("Cart"));
+
+export const getCartTotal = () => {
+  let cartObject = getCart();
+  if (cartObject.products !== null) {
+    let totalPrice = 0;
+
+    for (let i = 0; i < cartObject.products.length; i++) {
+      totalPrice =
+        getStockPrice(cartObject.products[i].id) *
+          Number(cartObject.products[i].qty) +
+        totalPrice;
+    }
+    return Number(totalPrice);
+  }
 };
 
-///- --------------
+///------Stock functions ------
+
+export const getStockPrice = (productId) => {
+  let p = allProducts.find((item) => item.id === productId);
+  return Number(p.price);
+};
+
 export const getProductStock = (productId) => {
   return allProducts.find((item) => item.id === productId);
 };
 
+///----- Extra functions -----------
 export const removeUserCart = () => {
   window.sessionStorage.removeItem("Cart");
 };

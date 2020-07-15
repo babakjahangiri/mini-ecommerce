@@ -1,24 +1,30 @@
 import React, { useState, useContext } from "react";
 import { NavLink } from "react-router-dom";
-import { cartItemsCountContext } from "./../../context";
+import { cartItemsCountContext, cartTotalContext } from "./../../context";
 import { CartRow } from "./../../components";
 import {
   getCartProducts,
   deleteCartItem,
   getItemsCount,
+  getCartTotal,
 } from "./../../functions";
 
 import "./shoppingcart.scss";
 
 const ShoppingCart = () => {
-  const [cartProducts, setCartProducts] = useState(getCartProducts());
+  const [cartProducts, setCartProducts] = useState(getCartProducts);
+
+  //const [cartTotal, setCartTotal] = useState(getCartTotal());
 
   //for mini basket items count
-  const { setItemsCount } = useContext(cartItemsCountContext);
+  const { ItemsCount, setItemsCount } = useContext(cartItemsCountContext);
+  const { totalCart, setTotalCart } = useContext(cartTotalContext);
 
+  //console.log(cartTotal);
   function removeItemHanlder(pid) {
     setCartProducts(deleteCartItem(pid));
     setItemsCount(getItemsCount());
+    setTotalCart(getCartTotal());
   }
 
   return (
@@ -51,12 +57,20 @@ const ShoppingCart = () => {
             />
           ))}
         </div>
+        <div className="shopping-cart-totalprice">
+          <div> </div>
+          <div> </div>
+          <div>Total Price :</div>
+          <div>£ {totalCart}</div>
+          <div></div>
+        </div>
+
         <div className="shoppingcart-footer">
           <div>
-            <button>Continue Shopping</button>
+            <button className="btn-shopping">Continue Shopping</button>
           </div>
           <div>
-            <button>Checkout</button>
+            <button className="btn-checkout">Checkout</button>
             <p>FREE SHIPPING AND RETURNS</p>
           </div>
         </div>

@@ -1,10 +1,11 @@
 import React, { useState, useContext } from "react";
 import { Link } from "react-router-dom";
-import { cartItemsCountContext } from "./../../context";
+import { cartItemsCountContext, cartTotalContext } from "./../../context";
 import {
   updateCartItem,
   getProductStock,
   getItemsCount,
+  getCartTotal,
 } from "../../functions";
 import removeIcon from "./../../images/remove.svg";
 import "./cartrow.scss";
@@ -12,6 +13,7 @@ import "./cartrow.scss";
 const CartRow = ({ cartProduct, removeItemHanlder }) => {
   //for mini basket items count
   const { setItemsCount } = useContext(cartItemsCountContext);
+  const { totalCart, setTotalCart } = useContext(cartTotalContext);
 
   const [productData] = useState(getProductStock(cartProduct.id));
   const [productQty, setProductQty] = useState(cartProduct.qty);
@@ -20,6 +22,7 @@ const CartRow = ({ cartProduct, removeItemHanlder }) => {
     setProductQty(qty);
     updateCartItem(pid, qty);
     setItemsCount(getItemsCount());
+    setTotalCart(getCartTotal());
   }
 
   return (
