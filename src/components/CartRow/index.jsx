@@ -1,4 +1,5 @@
 import React, { useState, useContext } from "react";
+import { Link } from "react-router-dom";
 import { cartItemsCountContext } from "./../../context";
 import {
   updateCartItem,
@@ -8,13 +9,11 @@ import {
 import removeIcon from "./../../images/remove.svg";
 import "./cartrow.scss";
 
-const CartRow = ({ cartProduct, removeItemHanlder, editCartHanler }) => {
+const CartRow = ({ cartProduct, removeItemHanlder }) => {
   //for mini basket items count
-  const { itemsCount, setItemsCount } = useContext(cartItemsCountContext);
+  const { setItemsCount } = useContext(cartItemsCountContext);
 
-  const [productData, setProductData] = useState(
-    getProductStock(cartProduct.id)
-  );
+  const [productData] = useState(getProductStock(cartProduct.id));
   const [productQty, setProductQty] = useState(cartProduct.qty);
 
   function editCartHanler(pid, qty) {
@@ -26,12 +25,16 @@ const CartRow = ({ cartProduct, removeItemHanlder, editCartHanler }) => {
   return (
     <div className="shoppingcart-row">
       <div className="shoppingcart-product-image">
-        <img src={`images/${productData.image}`} alt="" />
+        <Link to={"product/" + productData.id}>
+          <img src={`images/${productData.image}`} alt="{productData.name}" />
+        </Link>
       </div>
 
       <div className="shoppingcart-product-name">
-        <h2>{productData.name}</h2>
-        <h5>£ {productData.price}</h5>
+        <Link to={"product/" + productData.id}>
+          <h2>{productData.name}</h2>
+          <h5>£ {productData.price}</h5>
+        </Link>
       </div>
 
       <div className="shoppingcart-product-qty">
@@ -42,8 +45,6 @@ const CartRow = ({ cartProduct, removeItemHanlder, editCartHanler }) => {
           min="1"
           max="99"
           value={productQty}
-          //onChange={() => editCartHanler(cartProduct.id, productQty)}
-
           onChange={(e) => editCartHanler(cartProduct.id, e.target.value)}
         />
       </div>

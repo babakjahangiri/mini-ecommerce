@@ -14,7 +14,7 @@ const ShoppingCart = () => {
   const [cartProducts, setCartProducts] = useState(getCartProducts());
 
   //for mini basket items count
-  const { itemsCount, setItemsCount } = useContext(cartItemsCountContext);
+  const { setItemsCount } = useContext(cartItemsCountContext);
 
   function removeItemHanlder(pid) {
     setCartProducts(deleteCartItem(pid));

@@ -15,31 +15,38 @@
 }
 
 .shoppingcart-product-image {
-  width: 10%;
+  width: 12%;
 
-  img {
-    height: 100px;
-    width: auto;
-    cursor: pointer;
+  a {
+    text-decoration: none;
+
+    img {
+      height: 100px;
+      width: auto;
+      cursor: pointer;
+    }
   }
 }
 
 .shoppingcart-product-name {
-  width: 30%;
-
-  h2 {
-    text-align: left;
-    font-size: 1.15em;
-    font-weight: 200;
-    margin-bottom: 10px;
-    cursor: pointer;
-  }
-  h5 {
-    text-align: left;
-    font-size: 1em;
-    font-weight: 200;
-    margin-top: 0px;
-    cursor: pointer;
+  width: 27%;
+  a {
+    text-decoration: none;
+    color: $normal-text-color;
+    h2 {
+      text-align: left;
+      font-size: 1.15em;
+      font-weight: 200;
+      margin-bottom: 10px;
+      cursor: pointer;
+    }
+    h5 {
+      text-align: left;
+      font-size: 1em;
+      font-weight: 200;
+      margin-top: 0px;
+      cursor: pointer;
+    }
   }
 }
 

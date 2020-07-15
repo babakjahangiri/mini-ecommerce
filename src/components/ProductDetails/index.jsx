@@ -10,7 +10,7 @@ const ProductDetails = ({ match }) => {
   const [itemAdded, setItemAdded] = useState(false);
 
   const productId = match.params.pid;
-  const { itemsCount, setItemsCount } = useContext(cartItemsCountContext);
+  const { setItemsCount } = useContext(cartItemsCountContext);
   useEffect(() => {
     setProductItem(allProducts.filter((p) => p.id === Number(productId)));
   }, [productId]);
