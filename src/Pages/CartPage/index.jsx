@@ -6,7 +6,6 @@ import "./cartpage.scss";
 const CartPage = () => {
   const [totalCart, setTotalCart] = useState(getCartTotal);
 
-  console.log(getCartProducts());
   return (
     <Fragment>
       <cartTotalContext.Provider value={{ totalCart, setTotalCart }}>

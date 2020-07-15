@@ -13,7 +13,7 @@ import "./cartrow.scss";
 const CartRow = ({ cartProduct, removeItemHanlder }) => {
   //for mini basket items count
   const { setItemsCount } = useContext(cartItemsCountContext);
-  const { totalCart, setTotalCart } = useContext(cartTotalContext);
+  const { setTotalCart } = useContext(cartTotalContext);
 
   const [productData] = useState(getProductStock(cartProduct.id));
   const [productQty, setProductQty] = useState(cartProduct.qty);

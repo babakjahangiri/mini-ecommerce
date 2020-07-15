@@ -35,10 +35,11 @@
     color: $normal-text-color;
     h2 {
       text-align: left;
-      font-size: 1.15em;
+      font-size: 1.25em;
       font-weight: 200;
       margin-bottom: 10px;
       cursor: pointer;
+      visibility: hidden;
     }
     h5 {
       text-align: left;
@@ -46,6 +47,7 @@
       font-weight: 200;
       margin-top: 0px;
       cursor: pointer;
+      visibility: hidden;
     }
   }
 }
@@ -55,9 +57,10 @@
 
   input[type="number"] {
     width: 100%;
-    padding: 10px 20px;
-    margin: 8px 0;
-    font-size: 1.8em;
+    height: 60px;
+    padding: 10px 5px;
+    margin: 5px 0px;
+    font-size: 1em;
     font-weight: 200;
     font-family: $default-font;
     box-sizing: border-box;
@@ -74,7 +77,7 @@
   display: block;
   margin: auto;
   h3 {
-    font-size: 2em;
+    font-size: 1.5em;
     font-weight: 200;
   }
 }
@@ -82,8 +85,82 @@
 .shoppingcart-product-remove {
   width: $sc-col-remove-width;
   img {
-    height: 40px;
+    height: 25px;
     width: auto;
     cursor: pointer;
+  }
+}
+
+@media (min-width: 576px) {
+  .shoppingcart-product-remove {
+    img {
+      height: 30px;
+    }
+  }
+
+  .shoppingcart-product-qty {
+    input[type="number"] {
+      width: 90%;
+      padding: 15px 10px;
+      margin: 5px 0;
+      font-size: 1.25em;
+      font-weight: 200;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .shoppingcart-product-name {
+    a {
+      h2 {
+        font-size: 1em;
+        font-weight: 200;
+        visibility: visible;
+      }
+      h5 {
+        text-align: left;
+        font-size: 0.8em;
+        font-weight: 200;
+        visibility: visible;
+      }
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  .shoppingcart-product-qty {
+    input[type="number"] {
+      width: 90%;
+      padding: 15px 10px;
+      margin: 5px 0;
+      font-size: 1.5em;
+      font-weight: 200;
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  .shoppingcart-product-qty {
+    input[type="number"] {
+      width: 100%;
+      padding: 10px 20px;
+      margin: 8px 0;
+      font-size: 1.8em;
+      font-weight: 200;
+    }
+  }
+
+  .shoppingcart-product-price {
+    h3 {
+      font-size: 2em;
+      font-weight: 200;
+    }
+  }
+
+  .shoppingcart-product-remove {
+    img {
+      height: 40px;
+      width: auto;
+    }
   }
 }

@@ -14,13 +14,10 @@ import "./shoppingcart.scss";
 const ShoppingCart = () => {
   const [cartProducts, setCartProducts] = useState(getCartProducts);
 
-  //const [cartTotal, setCartTotal] = useState(getCartTotal());
-
   //for mini basket items count
-  const { ItemsCount, setItemsCount } = useContext(cartItemsCountContext);
+  const { setItemsCount } = useContext(cartItemsCountContext);
   const { totalCart, setTotalCart } = useContext(cartTotalContext);
 
-  //console.log(cartTotal);
   function removeItemHanlder(pid) {
     setCartProducts(deleteCartItem(pid));
     setItemsCount(getItemsCount());
@@ -75,7 +72,6 @@ const ShoppingCart = () => {
           </div>
         </div>
       </div>
-      {/* <p onClick={() => deleteItemHandler(6)}>Delete a Product</p> */}
     </section>
   );
 };
