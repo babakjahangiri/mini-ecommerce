@@ -1,14 +1,14 @@
 @import "../../_variables";
 
-$product-grid-width: 320px;
-
 .product-card {
+  div {
+    text-align: center;
+  }
   div a img {
-    width: $product-grid-width;
+    width: 80vw;
     height: auto;
     border: 1px $product-border-color solid;
   }
-  width: $product-grid-width;
 }
 
 .product-card-down {
@@ -41,14 +41,102 @@ $product-grid-width: 320px;
   }
 }
 .product-card-price {
-  font-size: 1.85em;
+  font-size: 1.8em;
   font-weight: 400;
   margin: 10px 0 5px 0;
 }
 
 .product-card-Addbtn {
-  font-size: 1.25em;
+  font-size: 1.5em;
   font-weight: 200;
   border-bottom: 1px solid black;
   cursor: pointer;
+}
+
+@media (min-width: 576px) {
+  .product-card {
+    width: 200px;
+    div a img {
+      width: 220px;
+    }
+    width: 100%;
+  }
+
+  .product-card-price {
+    font-size: 1.25em;
+  }
+  .product-card-title {
+  }
+  .product-card-Addbtn {
+    font-size: 1em;
+  }
+
+  .product-card-down {
+    div {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  .product-card {
+    div a img {
+      width: 250px;
+      height: auto;
+      border: 1px $product-border-color solid;
+    }
+    width: 250px;
+  }
+  .product-card-price {
+    font-size: 1.85em;
+  }
+  .product-card-title {
+    font-size: 1.35em;
+  }
+  .product-card-Addbtn {
+    font-size: 1.25em;
+  }
+}
+
+@media (min-width: 1200px) {
+  .product-card {
+    div a img {
+      width: 300px;
+      height: auto;
+      border: 1px $product-border-color solid;
+    }
+    width: 300px;
+  }
+
+  .product-card-price {
+    font-size: 1.85em;
+  }
+  .product-card-title {
+    font-size: 1.35em;
+  }
+  .product-card-Addbtn {
+    font-size: 1.25em;
+  }
+}
+
+@media (min-width: 1360px) {
+  .product-card {
+    div a img {
+      width: 320px;
+      height: auto;
+      border: 1px $product-border-color solid;
+    }
+    width: 320px;
+  }
+
+  .product-card-price {
+    font-size: 1.85em;
+  }
+  .product-card-title {
+    font-size: 1.35em;
+  }
+  .product-card-Addbtn {
+    font-size: 1.25em;
+  }
 }
