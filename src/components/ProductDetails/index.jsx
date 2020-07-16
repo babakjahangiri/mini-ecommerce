@@ -60,6 +60,7 @@ const ProductDetails = ({ match }) => {
               >
                 Item added to your cart
               </span>
+
               <button
                 className="btn-AddtoCart"
                 onClick={() => addToCart_ClickHandle(productItem[0].id)}
