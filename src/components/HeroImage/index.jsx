@@ -14,7 +14,7 @@ const HeroImage = () => {
         </div>
         <div className="hero-down">
           <div>
-            <p>Free Worldwide Shipping</p>
+            <p className="hero-maintext">Free Worldwide Shipping</p>
           </div>
           <div></div>
           <div></div>

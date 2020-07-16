@@ -59,12 +59,6 @@
 
     text-align: center;
     color: $background-color;
-
-    p {
-      display: block;
-      font-family: $default-font;
-      font-size: 1.75em;
-    }
   }
   :nth-child(2) {
     background-color: $header-color2;
@@ -73,5 +67,27 @@
   :nth-child(3) {
     background-color: $header-color3;
     flex: 1;
+  }
+}
+
+.hero-maintext {
+  font-size: 1em;
+}
+
+@media (min-width: 576px) {
+  .hero-maintext {
+    font-size: 1.25em;
+  }
+}
+
+@media (min-width: 992px) {
+  .hero-maintext {
+    font-size: 1.5em;
+  }
+}
+
+@media (min-width: 1200px) {
+  .hero-maintext {
+    font-size: 1.8em;
   }
 }
