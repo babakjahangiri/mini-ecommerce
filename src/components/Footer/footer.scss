@@ -26,9 +26,28 @@ footer {
       list-style-type: none;
       width: 50%;
       padding-left: 10px;
+
       li {
-        margin: 15px 0;
+        margin: 25px 0;
+
+        a {
+          text-decoration: none;
+          color: $footer-font;
+        }
       }
+    }
+  }
+}
+
+.social {
+  a {
+    text-decoration: none;
+    color: $footer-font;
+    &:visited,
+    &:active,
+    &:hover,
+    &:focus {
+      color: $footer-font;
     }
   }
 }

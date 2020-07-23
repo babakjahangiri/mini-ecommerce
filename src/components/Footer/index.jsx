@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./footer.scss";
 const Footer = () => {
   return (
@@ -6,9 +7,15 @@ const Footer = () => {
       <div className="footer-links">
         <div className="font-default">
           <ul>
-            <li>Products</li>
-            <li>ShoppingCart</li>
-            <li>About us</li>
+            <li>
+              <Link to={`/`}>Products</Link>
+            </li>
+            <li>
+              <Link to={`/cart`}>Shopping Cart</Link>
+            </li>
+            <li>
+              <Link to={`#`}>About us</Link>
+            </li>
           </ul>
         </div>
       </div>
@@ -20,10 +27,17 @@ const Footer = () => {
               Designed and Developed by Babak Jahangiri
             </p>
           </div>
-          <div className="text-right">
-            <i className="fab fa-facebook-f"></i>
-            <i className="fab fa-instagram"></i>
-            <i className="fab fa-twitter"></i>
+          <div className="social text-right">
+            <a href="http://www.facebook.com">
+              <i className="fab fa-facebook-f"></i>
+            </a>
+            <a href="http://www.instagram.com">
+              <i className="fab fa-instagram"></i>
+            </a>
+
+            <a href="http://www.twitter.com">
+              <i className="fab fa-twitter"></i>
+            </a>
           </div>
         </div>
       </div>
