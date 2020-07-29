@@ -19,11 +19,17 @@ const CartRow = ({ cartProduct, removeItemHanlder }) => {
   const [productQty, setProductQty] = useState(cartProduct.qty);
 
   function editCartHanler(pid, qty) {
-    setProductQty(qty);
-    updateCartItem(pid, qty);
-    setItemsCount(getItemsCount());
-    setTotalCart(getCartTotal());
+    if (Number(qty) < 100) {
+      setProductQty(qty);
+      updateCartItem(pid, qty);
+      setItemsCount(getItemsCount());
+      setTotalCart(getCartTotal());
+    }
   }
+  // function validateQtyHandler(number) {
+  //   number.toString().length > 2 &&
+  //     setProductQty(Number(number.toString().substr(0, 2)));
+  // }
 
   return (
     <div className="shoppingcart-row">
@@ -49,6 +55,7 @@ const CartRow = ({ cartProduct, removeItemHanlder }) => {
           max="99"
           value={productQty}
           onChange={(e) => editCartHanler(cartProduct.id, e.target.value)}
+          // onKeyUp={(e) => validateQtyHandler(e.target.value)}
         />
       </div>
       <div className="shoppingcart-product-price">
