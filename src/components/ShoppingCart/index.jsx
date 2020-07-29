@@ -24,6 +24,18 @@ const ShoppingCart = () => {
     setTotalCart(getCartTotal());
   }
 
+  function continueShoppingHandler() {
+    window.open(`${process.env.PUBLIC_URL}/`);
+  }
+
+  function checkoutHandler() {
+    let yourname = window.prompt("Please Enter your name: ");
+
+    if (yourname != null) {
+      window.open(`${process.env.PUBLIC_URL}/checkout/${yourname}`);
+    }
+  }
+
   return (
     <section className="shoppingcart-container">
       <div className="breadcrumbs">
@@ -64,10 +76,17 @@ const ShoppingCart = () => {
 
         <div className="shoppingcart-footer">
           <div>
-            <button className="btn-shopping">Continue Shopping</button>
+            <button
+              className="btn-shopping"
+              onClick={() => continueShoppingHandler()}
+            >
+              Continue Shopping
+            </button>
           </div>
           <div>
-            <button className="btn-checkout">Checkout</button>
+            <button className="btn-checkout" onClick={() => checkoutHandler()}>
+              Checkout
+            </button>
             <p>FREE SHIPPING AND RETURNS</p>
           </div>
         </div>

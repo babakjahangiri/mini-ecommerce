@@ -9,6 +9,7 @@ const ProductDetails = ({ match }) => {
   const [productItem, setProductItem] = useState(null);
   const [itemAdded, setItemAdded] = useState(false);
 
+  //props.location.query.name
   const productId = match.params.pid;
   const { setItemsCount } = useContext(cartItemsCountContext);
   useEffect(() => {

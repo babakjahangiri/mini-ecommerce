@@ -7,3 +7,5 @@ export { default as ProductDetails } from "./ProductDetails";
 export { default as ShoppingCart } from "./ShoppingCart";
 export { default as CartRow } from "./CartRow";
 export { default as MiniCartItem } from "./MiniCartItem";
+export { default as Checkout } from "./Checkout";
+export { default as InvoiceRow } from "./InvoiceRow";

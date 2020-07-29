@@ -1,0 +1,53 @@
+@import "../../_variables";
+
+.checkout-page-container {
+  width: $container-xl;
+
+  align-items: center;
+  margin: 0 auto;
+  text-align: center;
+  p {
+    font-family: $default-font;
+    font-size: 1.25em;
+  }
+}
+
+.invoice-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.invoice-header {
+  background-color: $product-border-color;
+  color: $normal-text-color;
+  font-family: $default-font;
+  width: 100%;
+  height: auto;
+
+  ul {
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    list-style: none;
+    //justify-content: space-between;
+    align-items: center;
+    font-size: 0.8em;
+    font-weight: 400;
+    li {
+      margin: auto;
+      align-self: center;
+    }
+  }
+}
+
+.invoice-body {
+  width: 100%;
+}
+
+@media (min-width: 992px) {
+  .invoice-container {
+    width: 80%;
+  }
+}

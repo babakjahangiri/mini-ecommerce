@@ -29,7 +29,7 @@ const CartRow = ({ cartProduct, removeItemHanlder }) => {
     <div className="shoppingcart-row">
       <div className="shoppingcart-product-image">
         <Link to={"product/" + productData.id}>
-          <img src={`images/${productData.image}`} alt="{productData.name}" />
+          <img src={`images/${productData.image}`} alt={productData.name} />
         </Link>
       </div>
 
