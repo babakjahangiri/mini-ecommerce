@@ -19,7 +19,8 @@ const CartRow = ({ cartProduct, removeItemHanlder }) => {
   const [productQty, setProductQty] = useState(cartProduct.qty);
 
   function editCartHanler(pid, qty) {
-    if (Number(qty) < 100) {
+    const regMatch = /^(0?[1-9]|[1-9][0-9])$/;
+    if (regMatch.test(Number(qty))) {
       setProductQty(qty);
       updateCartItem(pid, qty);
       setItemsCount(getItemsCount());
